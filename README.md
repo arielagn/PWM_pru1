@@ -12,3 +12,6 @@ Conectividad WiFi y protocolo de comunicacion MQTT
 Desde un servidor UBUNTU con Node-Red hacemos una 
 interface UI Web para el comando y recepcion de estos
 dispositivos. 
+
+El archivo flow_node_red.txt esta el flow para importar
+en Node-Red. 
