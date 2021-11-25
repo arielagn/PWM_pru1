@@ -50,38 +50,20 @@
         "type": "mqtt in",
         "z": "ab54e9608c76c577",
         "name": "",
-        "topic": "distancia",
+        "topic": "medicion",
         "qos": "2",
-        "datatype": "auto",
+        "datatype": "json",
         "broker": "e069b2ed5a80bbc1",
         "nl": false,
         "rap": true,
         "rh": 0,
-        "x": 160,
-        "y": 340,
+        "x": 200,
+        "y": 300,
         "wires": [
             [
-                "ded276115f7cbc18",
-                "9497c7d0015a4440",
-                "817e4e4c07a96409"
+                "988aec18321650b6"
             ]
         ]
-    },
-    {
-        "id": "ded276115f7cbc18",
-        "type": "debug",
-        "z": "ab54e9608c76c577",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 320,
-        "wires": []
     },
     {
         "id": "9bd4eeda0a6e8a84",
@@ -134,8 +116,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 280,
-        "y": 460,
+        "x": 290,
+        "y": 420,
         "wires": [
             [
                 "36bf8403242b824d"
@@ -185,8 +167,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 270,
-        "y": 520,
+        "x": 290,
+        "y": 500,
         "wires": [
             [
                 "9d83fb15be6003ee"
@@ -248,8 +230,8 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "x": 490,
-        "y": 380,
+        "x": 700,
+        "y": 300,
         "wires": [
             []
         ]
@@ -276,9 +258,107 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 660,
-        "y": 360,
+        "x": 690,
+        "y": 260,
         "wires": []
+    },
+    {
+        "id": "cd85a63f0bc9fc4a",
+        "type": "ui_colour_picker",
+        "z": "ab54e9608c76c577",
+        "name": "",
+        "label": "",
+        "group": "2d64e260d2e997a9",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": false,
+        "showValue": false,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 340,
+        "y": 600,
+        "wires": [
+            [
+                "d8911434fd786ce1"
+            ]
+        ]
+    },
+    {
+        "id": "d8911434fd786ce1",
+        "type": "debug",
+        "z": "ab54e9608c76c577",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ddba1dfb91c3bbf8",
+        "type": "inject",
+        "z": "ab54e9608c76c577",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "jsonata",
+        "x": 110,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "988aec18321650b6",
+        "type": "change",
+        "z": "ab54e9608c76c577",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.valor",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "817e4e4c07a96409",
+                "9497c7d0015a4440"
+            ]
+        ]
     },
     {
         "id": "e069b2ed5a80bbc1",
